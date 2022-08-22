@@ -1,9 +1,20 @@
 """
-p_004.py | Claus Pagano | Last update: 2021-11-8
+p_004.py | Claus Pagano | Last update: 2022-8-22
 
 Algorithms and Data Structures practice with Python
 
 """
+
+# --------------------------------------------------------------------------------------------------
+# Imports
+# --------------------------------------------------------------------------------------------------
+
+from f_000 import function_test
+
+
+# --------------------------------------------------------------------------------------------------
+# FUNCTION DECLARATION 
+# --------------------------------------------------------------------------------------------------
 
 def substractions(n1, n2):
     """
@@ -36,46 +47,26 @@ def substractions(n1, n2):
             mcd += 1
         return (mcd, n1)
 
+
 # --------------------------------------------------------------------------------------------------
 # TESTING
 # --------------------------------------------------------------------------------------------------
 
-def test():
-    """
-        Description: tests multiply function
+# Dictionary with test cases 
+test_config = {
+    'function': substractions,
+    'input_names': ['n1', 'n2'],
+    'num_precision': [0.5],
+    'tests': [
+        {'id': 1, 'input_values': [None, None], 'output_expected': None},
+        {'id': 2, 'input_values': [-1, 3], 'output_expected': -0.33},
+        {'id': 3, 'input_values': [10, 5], 'output_expected': 2},
+        {'id': 4, 'input_values': [0.1, 3], 'output_expected': None},
+        {'id': 5, 'input_values': [18, 2], 'output_expected': 9}
+    ],
+    'print_details': True  
+}
 
-        Parameters: none
-    """
-
-    test_params = [
-        {'n1': 10, 'n2': 5},
-        {'n1': 1, 'n2': '12'},
-        {'n1': 0, 'n2': 0},
-        {'n1': 0, 'n2': 1},
-        {'n1': 0, 'n2': -1},
-        {'n1': 1, 'n2': 0},
-        {'n1': -1, 'n2': 0},
-        {'n1': 1, 'n2': 1},
-        {'n1': 1, 'n2': -1},
-        {'n1': 2, 'n2': 8},
-        {'n1': -2, 'n2': 8},
-        {'n1': -2, 'n2': -8},
-        {'n1': 10, 'n2': 20},
-        {'n1': 2, 'n2': -3}
-    ]
-
-    print('\n')
-    print('---------------------------------------------------------')
-    print('Test ID |  n1  |  n2  | Result | Expected Result | Status')
-    print('---------------------------------------------------------')
-    for i, params in enumerate(test_params):
-        r = substractions(params['n1'], params['n2'])
-        if type(params['n1']) == int and type(params['n2']) == int:
-            er = params['n1'] / params['n2']
-        else:
-            er = 'ERROR'
-        status = 'OK' if r == er else 'NOK'
-        print(f'{i : ^7} | {params["n1"] : >4} | {params["n2"] : >4} | {r : >6} | {er : >15} | {status : ^6}')
 
 
 # --------------------------------------------------------------------------------------------------
@@ -83,7 +74,7 @@ def test():
 # --------------------------------------------------------------------------------------------------
 
 if __name__ == "__main__":
-   test()
+   function_test(test_config)
 
 
     
