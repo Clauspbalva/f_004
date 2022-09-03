@@ -15,7 +15,7 @@ Specification file for `substractions` function.
 
 ### 1.2 Signature
 ---
-> `? = substractions(n1, n2)`
+> `mcd = substractions(n1, n2)`
 
 <br>
 
@@ -37,46 +37,35 @@ by Euclid's algorithm
 
 | Input | Description | Type & Domain |
 |---|---|---|
-| `test_config` | Configuration of tests to be performed | *key:value pairs* <br> `dict`
-
-<br>
-
-**`test_config`**: definition
-
-| Input | Description | Type & Domain |
-|---|---|---|
-| `function` | Function identifier | Python identifier to a function object |
-| `input_names` | List of *input names* | List of text elements <br> `list` |
-| `tests` | List of tests to be performed | List of elements <br> `list` |
-| `print_details` | Flag to indicate if details of test results should be printed in the output. Default `True` | Boolean <br> `bool` |
-
-<br>
-
-**`test_config.tests`**: definition
-
-| Input | Description | Type & Domain |
-|---|---|---|
-| `id` | Test ID | Integer <br> `int` |
-| `input_values` | List of *input values* | List of elements <br> `list` |
-| `output_expected` | List of *expected output values* | List of elements <br> `list` |
+| `n1` | Dividend | *key:integer* <br> `int`
+| `n2` | Divisor | *key:integer* <br> `int`
 
 <br>
 
 ### 1.6 Outputs
 ---
-
-
-
-<br>
-
-## 2. Algorithm
----
-
-<span style='color:red'>TBD</span>
+| Output | Description | Type & Domain |
+|---|---|---|
+| `mcd` | result of `n1` / `n2` made by Euclid's algorithm | *key:integer* <br> `int`
 
 <br>
 
 ## 1. Test cases
 ---
+| Id | `n1` | `n2` | Output expected |
+|---|---|---|---|
+| 1 | `None` | `None` | None |
+| 2 | `-1` | `3` | -0.33 |
+| 3 | `10` | `5` | 2 |
+| 4 | `0.1` | `3` | None |
+| 5 | `18` | `2` | 9 |
 
-<span style='color:red'>TBD</span>
+<br>
+
+## 2. Algorithm
+---
+ ![Algorithm](f_004_algorithm.drawio.png)
+
+
+
+

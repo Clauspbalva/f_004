@@ -9,7 +9,7 @@ Algorithms and Data Structures practice with Python
 # Imports
 # --------------------------------------------------------------------------------------------------
 
-from f_000 import function_test
+from .f_000 import function_test
 
 
 # --------------------------------------------------------------------------------------------------
@@ -25,7 +25,7 @@ def substractions(n1, n2):
             n2 (int): number 2
 
         Return:
-            n3 (int) = n1 / n2
+            mcd (int) = n1 / n2
     """
 
     # Validates parameters: integer type
@@ -40,6 +40,7 @@ def substractions(n1, n2):
     n1 = abs(n1)
     n2 = abs(n2)
 
+    # Greatest common divisor
     mcd = 0  
     if n1 != 0 or n2 != 0:  
         while n1 >= n2:
