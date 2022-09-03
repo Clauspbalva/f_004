@@ -9,7 +9,11 @@ Algorithms and Data Structures practice with Python
 # Imports
 # --------------------------------------------------------------------------------------------------
 
-from .f_000 import function_test
+import sys
+
+sys.path.insert(0, 'C://Users//pagan//OneDrive//Desktop//Programming//Projects//python_projects//f_000')
+
+from f_000 import function_test
 
 
 # --------------------------------------------------------------------------------------------------
@@ -30,7 +34,7 @@ def substractions(n1, n2):
 
     # Validates parameters: integer type
     if type(n1) != int or type(n2) != int:
-        return 'ERROR'
+        return None
 
     # Determines result sign
     if (n1 > 0 and n2 > 0) or (n1 < 0 and n2 < 0):
